@@ -16,7 +16,7 @@
                 <ul style="list-style-type:none; margin:0; padding:10px; display:inline">
                     <li style="display: inline;" id="order_rmn">
                         <asp:Button ID="order_rmn_btn" runat="server" Text="Order Ramen" 
-                            style="visibility:hidden; margin: 0px"/>
+                            style="visibility:hidden; margin: 0px" OnClick="order_rmn_btn_Click"/>
                     </li>
                     <li style="display: inline;" id="history">
                         <asp:Button ID="history_btn" runat="server" Text="History" 

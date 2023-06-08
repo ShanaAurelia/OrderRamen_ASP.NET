@@ -41,6 +41,21 @@ namespace PSD_LAB_PROJECT.Repository
                                            
         }
 
+        public static List<RamenMenu> getRamenMenu()
+        {
+            DatabaseEntities db = new DatabaseEntities();
+            List<RamenMenu> ramenMenus = (from ramen in db.Ramen
+                                          join meats in db.Meats on ramen.MeatId equals meats.Id
+                                          select new RamenMenu
+                                          {
+                                              Broth = ramen.Broth,
+                                              Meat = ramen.Meat.name,
+                                              Name = ramen.Name,
+                                              Price = ramen.Price
+                                          }).ToList();
+            return ramenMenus;
+        }
+
         public static void ramenDeleteRepo(int id)
         {
             DatabaseEntities db = new DatabaseEntities();

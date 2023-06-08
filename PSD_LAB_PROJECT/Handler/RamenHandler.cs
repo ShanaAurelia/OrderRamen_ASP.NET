@@ -43,5 +43,11 @@ namespace PSD_LAB_PROJECT.Handler
         {
             return RamenRepository.checkRamenById(id);
         }
+
+        public static List<RamenMenu> getRamenMenu()
+        {
+            return RamenRepository.getRamenMenu();
+        }
+
     }
 }

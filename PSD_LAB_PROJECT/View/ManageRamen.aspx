@@ -5,7 +5,7 @@
     <div>
         <br /><br />
         <asp:Button ID="insert_rmn_btn" runat="server" Text="Insert Ramen" OnClick="insert_rmn_btn_Click" /><br /><br />
-        <asp:GridView ID="GridView1" runat="server" OnRowDeleting="GridView1_RowDeleting" OnRowEditing="GridView1_RowEditing" >
+        <asp:GridView ID="GridView1" runat="server" OnRowDeleting="GridView1_RowDeleting" OnRowEditing="GridView1_RowEditing" Caption="Edit Ramen Menu" >
             <Columns>
                 <asp:CommandField ButtonType="Button" ShowCancelButton="False" ShowDeleteButton="True" ShowEditButton="True" />
             </Columns>

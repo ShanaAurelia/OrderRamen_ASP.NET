@@ -37,7 +37,7 @@ namespace PSD_LAB_PROJECT.Controller
             }
             Raman checkRamen = new Raman();
             checkRamen = RamenHandler.checkRamenExistence(name);
-            if(checkRamen.Name.Equals(name))
+            if(checkRamen != null)
             {
                 return "Please choose a new ramen name!";
             }
@@ -73,6 +73,10 @@ namespace PSD_LAB_PROJECT.Controller
             }
             RamenHandler.editRamenHandler(id, name, meat, broth, price);
             return "success!";
+        }
+        public static List<RamenMenu> datasourceForRamenMenu()
+        {
+            return RamenHandler.getRamenMenu();
         }
     }
 }

@@ -83,5 +83,10 @@ namespace PSD_LAB_PROJECT.View
         {
             Response.Redirect("~/View/Profile.aspx");
         }
+
+        protected void order_rmn_btn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/orderRamen.aspx");
+        }
     }
 }

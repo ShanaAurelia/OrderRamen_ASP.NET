@@ -7,7 +7,7 @@
         <asp:Label ID="username_label" runat="server" Text=""></asp:Label><br />
         <asp:Label ID="role_label" runat="server" Text=""></asp:Label> <br /><br />
 
-        <asp:GridView ID="GV_For_Staff" runat="server"></asp:GridView>
+        <asp:GridView ID="GV_For_Staff" runat="server" Caption="Data View"></asp:GridView>
     </div>
 </asp:Content>
 
