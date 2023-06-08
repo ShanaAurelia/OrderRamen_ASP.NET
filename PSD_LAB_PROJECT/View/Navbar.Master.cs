@@ -8,28 +8,30 @@ using System.Web.UI.WebControls;
 
 namespace PSD_LAB_PROJECT.View
 {
-    public partial class OrderRamen : System.Web.UI.Page
+    public partial class Navbar : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string username = "";
+           HttpCookie currCookie = Request.Cookies["user_cookie"];
 
-            if (Request.Cookies.Equals("check_cookie"))
+            string curr_username = "";
+
+            // reading from cookies and session for user info
+            if (currCookie != null)
             {
                 HttpCookie check_cookie = Request.Cookies["user_cookie"];
-                username = check_cookie["username"].ToString();
+                curr_username = check_cookie["username"];
             }
-            if (Session["username_session"] != null)
+            else if (Session["username_session"] != null)
             {
-                username = Session["username_session"].ToString();
+                curr_username = Session["username_session"].ToString();
             }
-            else
+            if (curr_username.Equals(""))
             {
                 Response.Redirect("~/View/Login.aspx");
             }
 
-            string userRole = UserController.validateUserRole(username);
-
+            string userRole = UserController.validateUserRole(curr_username);
 
             if (userRole.Equals("Customer"))
             {
@@ -55,9 +57,24 @@ namespace PSD_LAB_PROJECT.View
                 report_btn.Attributes["style"] = "visibility: visible";
                 logout_btn.Attributes["style"] = "visibility: visible";
             }
+        
+    }
+        protected void logout_btn_Click(object sender, EventArgs e)
+        {
+            Response.Cookies["user_cookie"].Expires = DateTime.Now.AddDays(-1);
+            Session.Clear();
+            Response.Redirect("~/View/Login.aspx");
+        }
 
+        protected void manage_rmn_btn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/ManageRamen.aspx");
+        }
 
+        protected void home_btn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/wm_home.aspx");
         }
 
     }
-    }
+}

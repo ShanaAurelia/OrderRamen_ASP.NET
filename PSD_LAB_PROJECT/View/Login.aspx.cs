@@ -13,11 +13,12 @@ namespace PSD_LAB_PROJECT.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Request.Cookies.Equals("check_cookie"))
+            HttpCookie currCookie = Request.Cookies["user_cookie"];
+            if (currCookie != null)
             {
                 HttpCookie check_cookie = Request.Cookies["user_cookie"];
-                username_txb.Text = check_cookie["username"].ToString();
-                password_txb.Text = check_cookie["password"].ToString();
+                username_txb.Text = check_cookie["username"];
+                password_txb.Text = check_cookie["password"];
             }
 
         }
@@ -35,7 +36,7 @@ namespace PSD_LAB_PROJECT.View
                     {
                         HttpCookie user_cookie = new HttpCookie("user_cookie");
                         DateTime currentTime = DateTime.Now;
-                        user_cookie.Expires = currentTime.AddHours(2);
+                        user_cookie.Expires = currentTime.AddDays(1);
                         user_cookie["username"] = username;
                         user_cookie["password"] = password;
                         Response.Cookies.Add(user_cookie);
@@ -45,7 +46,7 @@ namespace PSD_LAB_PROJECT.View
                 Session["username_session"] = username;
 
                 // redirect
-                Response.Redirect("~/View/Home.aspx");
+                Response.Redirect("~/View/home.aspx");
             }
             }
 

@@ -1,52 +1,31 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InsertRamen.aspx.cs" Inherits="PSD_LAB_PROJECT.View.InsertRamen" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Navbar.Master" AutoEventWireup="true" CodeBehind="InsertRamen.aspx.cs" Inherits="PSD_LAB_PROJECT.View.InsertRamen1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div>
+        <asp:Label ID="welcome_txt" runat="server" Text="Please create your ramen!"></asp:Label>
+            
+            <asp:Label ID="rmn_name_lbl" runat="server" Text="Ramen Name   "></asp:Label>
+            <asp:TextBox ID="rmn_name_txb" runat="server"></asp:TextBox><br />
 
-<!DOCTYPE html>
+            <asp:Label ID="rmn_meat_lbl" runat="server" Text="Meat Type   "></asp:Label>
+            <asp:RadioButtonList ID="rmn_meat_opt" runat="server">
+                <asp:ListItem Text="Chicken"></asp:ListItem>
+                <asp:ListItem Text="Beef"></asp:ListItem>
+                <asp:ListItem Text="Pork"></asp:ListItem>
+                <asp:ListItem Text="Lamb"></asp:ListItem>
+                <asp:ListItem Text="Fish"></asp:ListItem>
+                <asp:ListItem Text="No Meat"></asp:ListItem>
+            </asp:RadioButtonList><br />
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-            <navbar>
-                <ul style="list-style-type:none; margin:0; padding:10px; display:inline">
-                    <li style="display: inline;" id="order_rmn">
-                        <asp:Button ID="order_rmn_btn" runat="server" Text="Order Ramen" 
-                            style="visibility:hidden; margin: 0px"/>
-                    </li>
-                    <li style="display: inline;" id="history">
-                        <asp:Button ID="history_btn" runat="server" Text="History" 
-                            style="visibility:hidden; margin: 0px"/>
-                        </li>
-                    <li style="display: inline;" id="profile">
-                        <asp:Button ID="profile_btn" runat="server" Text="Profile" 
-                            style="visibility:hidden; margin: 0px"/>
-                        </li>
-                    <li style="display: inline;" id="home">
-                        <asp:Button ID="home_btn" runat="server" Text="Home" 
-                            style="visibility:hidden; margin: 0px"/>
-                        </li>
-                    <li style="display: inline;" id="manage">
-                        <asp:Button ID="manage_rmn_btn" runat="server" Text="Manage Ramen" 
-                            style="visibility:hidden; margin: 0px"/>
-                    </li>
-                    <li style="display: inline;">
-                        <asp:Button ID="order_queue_btn" runat="server" Text="Order Queue" 
-                            style="visibility:hidden; margin: 0px"/>
-                    </li>
-                    <li style="display: inline; margin: 20px" id="report">
-                        <asp:Button ID="report_btn" runat="server" Text="Report" 
-                            style="visibility:hidden; margin: 0px"/>
-                        </li>
-                    <li style="display: inline;" id="logout">
-                        <asp:Button ID="logout_btn" runat="server" Text="Logout" 
-                            style="visibility:hidden; margin: 0px" OnClick="logout_btn_Click"/>
-                        </li>
-                </ul>
-            </navbar>
+            <asp:Label ID="rmn_broth_lbl" runat="server" Text="Broth   "></asp:Label>
+            <asp:TextBox ID="rmn_broth_txb" runat="server"></asp:TextBox><br />
 
-        </div>
-    </form>
-</body>
-</html>
+            <asp:Label ID="rmn_price_lbl" runat="server" Text="Price   "></asp:Label>
+            <asp:TextBox ID="rmn_price_txb" runat="server"></asp:TextBox><br /><br />
+
+            <asp:Button ID="create_rmn_btn" runat="server" Text="Create Ramen" OnClick="create_rmn_btn_Click" />
+            <asp:Button ID="go_back_btn" runat="server" Text="Go Back" /><br />
+            <asp:Label ID="status_lbl" runat="server" Text=""></asp:Label>
+    </div>
+</asp:Content>

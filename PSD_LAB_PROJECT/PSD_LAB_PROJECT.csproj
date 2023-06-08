@@ -89,17 +89,19 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
-    <Content Include="View\Home.aspx" />
+    <Content Include="View\home.aspx" />
     <Content Include="View\InsertRamen.aspx" />
     <Content Include="View\Login.aspx" />
     <Content Include="View\ManageRamen.aspx" />
-    <Content Include="View\OrderRamen.aspx" />
     <Content Include="View\Register.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\RamenController.cs" />
     <Compile Include="Controller\UserController.cs" />
+    <Compile Include="Factory\RamenFactory.cs" />
     <Compile Include="Factory\UserFactory.cs" />
+    <Compile Include="Handler\RamenHandler.cs" />
     <Compile Include="Handler\UserHandler.cs" />
     <Compile Include="Model\Detail.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -128,6 +130,7 @@
     <Compile Include="Model\Raman.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\RamenOutput.cs" />
     <Compile Include="Model\Role.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -136,13 +139,14 @@
     </Compile>
     <Compile Include="Model\UserOutput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\RamenRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
-    <Compile Include="View\Home.aspx.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
+    <Compile Include="View\home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Home.aspx.designer.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
+    <Compile Include="View\home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\InsertRamen.aspx.cs">
       <DependentUpon>InsertRamen.aspx</DependentUpon>
@@ -165,12 +169,12 @@
     <Compile Include="View\ManageRamen.aspx.designer.cs">
       <DependentUpon>ManageRamen.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\OrderRamen.aspx.cs">
-      <DependentUpon>OrderRamen.aspx</DependentUpon>
+    <Compile Include="View\Navbar.Master.cs">
+      <DependentUpon>Navbar.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\OrderRamen.aspx.designer.cs">
-      <DependentUpon>OrderRamen.aspx</DependentUpon>
+    <Compile Include="View\Navbar.Master.designer.cs">
+      <DependentUpon>Navbar.Master</DependentUpon>
     </Compile>
     <Compile Include="View\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
@@ -189,6 +193,7 @@
       <DependentUpon>Model.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
+    <Content Include="View\Navbar.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

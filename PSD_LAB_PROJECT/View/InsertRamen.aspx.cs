@@ -8,52 +8,23 @@ using System.Web.UI.WebControls;
 
 namespace PSD_LAB_PROJECT.View
 {
-    public partial class InsertRamen : System.Web.UI.Page
+    public partial class InsertRamen1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string username = "";
 
-            if (Request.Cookies.Equals("check_cookie"))
-            {
-                HttpCookie check_cookie = Request.Cookies["user_cookie"];
-                username = check_cookie["username"].ToString();
-            }
-            if (Session["username_session"] != null)
-            {
-                username = Session["username_session"].ToString();
-            }
-            else
-            {
-                Response.Redirect("~/View/Login.aspx");
-            }
+        }
 
-            string userRole = UserController.validateUserRole(username);
-
-
-            if (userRole.Equals("Customer"))
+        protected void create_rmn_btn_Click(object sender, EventArgs e)
+        {
+            string name = rmn_name_txb.Text;
+            string meat = rmn_meat_opt.SelectedValue;
+            string broth = rmn_broth_txb.Text;
+            string price = rmn_price_txb.Text;
+            status_lbl.Text = RamenController.validateRamenRegistry(name, meat, broth, price);
+            if (status_lbl.Text.Equals("success!"))
             {
-                order_rmn_btn.Attributes["style"] = "visibility: visible";
-                history_btn.Attributes["style"] = "visibility: visible";
-                profile_btn.Attributes["style"] = "visibility: visible";
-                logout_btn.Attributes["style"] = "visibility: visible";
-            }
-            if (userRole.Equals("Staff"))
-            {
-                home_btn.Attributes["style"] = "visibility: visible";
-                manage_rmn_btn.Attributes["style"] = "visibility: visible";
-                order_queue_btn.Attributes["style"] = "visibility: visible";
-                profile_btn.Attributes["style"] = "visibility: visible";
-                logout_btn.Attributes["style"] = "visibility: visible";
-            }
-            if (userRole.Equals("Admin"))
-            {
-                manage_rmn_btn.Attributes["style"] = "visibility: visible";
-                order_queue_btn.Attributes["style"] = "visibility: visible";
-                profile_btn.Attributes["style"] = "visibility: visible";
-                history_btn.Attributes["style"] = "visibility: visible";
-                report_btn.Attributes["style"] = "visibility: visible";
-                logout_btn.Attributes["style"] = "visibility: visible";
+                Response.Redirect("~/View/ManageRamen.aspx");
             }
         }
     }

@@ -44,13 +44,17 @@ namespace PSD_LAB_PROJECT.Controller
         public static string validateUserLogin(string username, string password)
         {
             User user = UserHandler.loginUserHandler(username);
-            if(user.Username.Equals(username) && user.Password.Equals(password))
-            {
-                return "success!";
-            }
-            else if(user.Username.Equals("") || user.Username.Equals(""))
+            if (user.Equals(null))
             {
                 return "Please fill all the required fields!";
+            }
+            if (user.Username.Equals("") || user.Username.Equals(""))
+            {
+                return "Please fill all the required fields!";
+            }
+            else if (user.Username.Equals(username) && user.Password.Equals(password))
+            {
+                return "success!";
             }
             else
             {

@@ -1,59 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="PSD_LAB_PROJECT.View.Home" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/Navbar.Master" AutoEventWireup="true" CodeBehind="home.aspx.cs" Inherits="PSD_LAB_PROJECT.View.home" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div>
+        <asp:Label ID="welcome" runat="server" Text="Welcome!!"></asp:Label><br />
+        <asp:Label ID="username_label" runat="server" Text=""></asp:Label><br />
+        <asp:Label ID="role_label" runat="server" Text=""></asp:Label> <br /><br />
 
-<!DOCTYPE html>
+        <asp:GridView ID="GV_For_Staff" runat="server"></asp:GridView>
+    </div>
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-            <navbar>
-                <ul style="list-style-type:none; margin:0; padding:10px; display:inline">
-                    <li style="display: inline;" id="order_rmn">
-                        <asp:Button ID="order_rmn_btn" runat="server" Text="Order Ramen" 
-                            style="visibility:hidden; margin: 0px"/>
-                    </li>
-                    <li style="display: inline;" id="history">
-                        <asp:Button ID="history_btn" runat="server" Text="History" 
-                            style="visibility:hidden; margin: 0px"/>
-                        </li>
-                    <li style="display: inline;" id="profile">
-                        <asp:Button ID="profile_btn" runat="server" Text="Profile" 
-                            style="visibility:hidden; margin: 0px"/>
-                        </li>
-                    <li style="display: inline;" id="home">
-                        <asp:Button ID="home_btn" runat="server" Text="Home" 
-                            style="visibility:hidden; margin: 0px"/>
-                        </li>
-                    <li style="display: inline;" id="manage">
-                        <asp:Button ID="manage_rmn_btn" runat="server" Text="Manage Ramen" 
-                            style="visibility:hidden; margin: 0px" OnClick="manage_rmn_btn_Click"/>
-                    </li>
-                    <li style="display: inline;">
-                        <asp:Button ID="order_queue_btn" runat="server" Text="Order Queue" 
-                            style="visibility:hidden; margin: 0px"/>
-                    </li>
-                    <li style="display: inline; margin: 20px" id="report">
-                        <asp:Button ID="report_btn" runat="server" Text="Report" 
-                            style="visibility:hidden; margin: 0px"/>
-                        </li>
-                    <li style="display: inline;" id="logout">
-                        <asp:Button ID="logout_btn" runat="server" Text="Logout" 
-                            style="visibility:hidden; margin: 0px" OnClick="logout_btn_Click"/>
-                        </li>
-                </ul>
-            </navbar>
 
-            <div>
-                <asp:Label ID="welcome" runat="server" Text="Welcome!!"></asp:Label><br />
-                <asp:Label ID="username_label" runat="server" Text=""></asp:Label><br />
-                <asp:Label ID="role_label" runat="server" Text=""></asp:Label> <br /><br />
-
-                <asp:GridView ID="GV_For_Staff" runat="server"></asp:GridView>
-            </div>
-        </div>
-    </form>
-</body>
-</html>

@@ -11,88 +11,115 @@ namespace PSD_LAB_PROJECT.View
 {
 
 
-    public partial class InsertRamen
+    public partial class InsertRamen1
     {
 
         /// <summary>
-        /// form1 control.
+        /// welcome_txt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label welcome_txt;
 
         /// <summary>
-        /// order_rmn_btn control.
+        /// rmn_name_lbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button order_rmn_btn;
+        protected global::System.Web.UI.WebControls.Label rmn_name_lbl;
 
         /// <summary>
-        /// history_btn control.
+        /// rmn_name_txb control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button history_btn;
+        protected global::System.Web.UI.WebControls.TextBox rmn_name_txb;
 
         /// <summary>
-        /// profile_btn control.
+        /// rmn_meat_lbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button profile_btn;
+        protected global::System.Web.UI.WebControls.Label rmn_meat_lbl;
 
         /// <summary>
-        /// home_btn control.
+        /// rmn_meat_opt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button home_btn;
+        protected global::System.Web.UI.WebControls.RadioButtonList rmn_meat_opt;
 
         /// <summary>
-        /// manage_rmn_btn control.
+        /// rmn_broth_lbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button manage_rmn_btn;
+        protected global::System.Web.UI.WebControls.Label rmn_broth_lbl;
 
         /// <summary>
-        /// order_queue_btn control.
+        /// rmn_broth_txb control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button order_queue_btn;
+        protected global::System.Web.UI.WebControls.TextBox rmn_broth_txb;
 
         /// <summary>
-        /// report_btn control.
+        /// rmn_price_lbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button report_btn;
+        protected global::System.Web.UI.WebControls.Label rmn_price_lbl;
 
         /// <summary>
-        /// logout_btn control.
+        /// rmn_price_txb control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button logout_btn;
+        protected global::System.Web.UI.WebControls.TextBox rmn_price_txb;
+
+        /// <summary>
+        /// create_rmn_btn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button create_rmn_btn;
+
+        /// <summary>
+        /// go_back_btn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button go_back_btn;
+
+        /// <summary>
+        /// status_lbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label status_lbl;
     }
 }
