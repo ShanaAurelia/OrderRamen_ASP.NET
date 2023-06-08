@@ -21,5 +21,20 @@ namespace PSD_LAB_PROJECT.View
             Response.Redirect("~/View/InsertRamen.aspx");
         }
 
+
+        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            GridViewRow rows = GridView1.Rows[e.RowIndex];
+            int Id = int.Parse(rows.Cells[1].Text) ;
+            RamenController.ramenDelete(Id);
+            Response.Redirect("~/View/ManageRamen.aspx");
+        }
+
+        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            GridViewRow rows = GridView1.Rows[e.NewEditIndex];
+            string Id = rows.Cells[1].Text;
+            Response.Redirect("~/View/updateRamen.aspx?ID=" + Id);
+        }
     }
 }

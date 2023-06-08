@@ -52,5 +52,24 @@ namespace PSD_LAB_PROJECT.Repository
                                          }).ToList();
             return userData;
         }
+
+        public static int getUserID(string username)
+        {
+            DatabaseEntities db = new DatabaseEntities();
+            User user = db.Users.Where((x) => x.Username.Equals(username)).FirstOrDefault();
+            return user.Id;
+        }
+
+        public static User updateUser(string username, string password, string gender, string email, int id)
+        {
+            DatabaseEntities db = new DatabaseEntities();
+            User user = db.Users.Find(id);
+            user.Username = username;
+            user.Password = password;
+            user.Gender = gender;
+            user.Email = email;
+            db.SaveChanges();
+            return db.Users.Where((x) => x.Username.Equals(username)).FirstOrDefault();
+        }
     }
 }

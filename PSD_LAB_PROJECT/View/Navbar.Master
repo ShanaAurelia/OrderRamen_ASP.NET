@@ -24,7 +24,7 @@
                         </li>
                     <li style="display: inline;" id="profile">
                         <asp:Button ID="profile_btn" runat="server" Text="Profile" 
-                            style="visibility:hidden; margin: 0px"/>
+                            style="visibility:hidden; margin: 0px" OnClick="profile_btn_Click"/>
                         </li>
                     <li style="display: inline;" id="home">
                         <asp:Button ID="home_btn" runat="server" Text="Home" 

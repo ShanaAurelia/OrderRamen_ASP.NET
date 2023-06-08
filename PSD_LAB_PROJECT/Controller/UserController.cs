@@ -11,7 +11,7 @@ namespace PSD_LAB_PROJECT.Controller
     {
         public static string validateUserRegistry(string username, string email, string gender, string password, string cpassword)
         {
-            User newUser = new User();
+            User checkUser = new User();
 
             // validasi
             if (username.Equals("") || email.Equals("") || gender.Equals("") || password.Equals(""))
@@ -37,6 +37,12 @@ namespace PSD_LAB_PROJECT.Controller
             if (!(password.Equals(cpassword))){
                 return "Password not the same with confirm password!";
             }
+
+            checkUser = UserHandler.loginUserHandler(username);
+            if (checkUser.Username.Equals(username))
+            {
+                return "Please choose another username!";
+            }
                 UserHandler.createUserHandler(username, email, gender, password);
                 return "success!";
         }
@@ -44,9 +50,9 @@ namespace PSD_LAB_PROJECT.Controller
         public static string validateUserLogin(string username, string password)
         {
             User user = UserHandler.loginUserHandler(username);
-            if (user.Equals(null))
+            if (user == null)
             {
-                return "Please fill all the required fields!";
+                return "Your username and password does not match our database!";
             }
             if (user.Username.Equals("") || user.Username.Equals(""))
             {
@@ -88,6 +94,34 @@ namespace PSD_LAB_PROJECT.Controller
        public static List<UserOutput> datasourceForAdmin()
         {
             return UserHandler.getDataForAdmin();
+        }
+
+        public static User getUserData(string username)
+        {
+            return UserHandler.loginUserHandler(username);
+        }
+
+        public static string updateUserRegistry( string oldUsername, string username, string gender, string email, string password)
+        {
+
+            if (username.Equals("") || email.Equals("") || gender.Equals("") || password.Equals(""))
+            {
+                return "Please fill all the required fields!";
+            }
+            if (username.Length > 15 && username.Length < 5)
+            {
+                return "Username length is between 5 to 15 characters!";
+            }
+            if (username.Contains(" "))
+            {
+                return "Username cannot contain spaces!";
+            }
+            if (!email.EndsWith(".com"))
+            {
+                return "Enter a valid email with .com at the end!";
+            }
+            UserHandler.updateUserRegistry(oldUsername ,username, password, email, gender);
+            return "success!";
         }
     }
 }

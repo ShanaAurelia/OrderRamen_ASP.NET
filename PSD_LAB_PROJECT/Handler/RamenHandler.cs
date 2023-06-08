@@ -23,5 +23,25 @@ namespace PSD_LAB_PROJECT.Handler
         {
             return RamenRepository.getRamenData();
         }
+
+        public static void deleteRamenHandler(int id)
+        {
+            RamenRepository.ramenDeleteRepo(id);
+        }
+
+        public static void editRamenHandler(int id, string name, string meat, string broth, string price)
+        {
+            RamenRepository.ramenEditingRepo(id, name, meat, broth, price);
+        }
+        
+        public static Raman checkRamenExistence(string name)
+        {
+            return RamenRepository.checkRamen(name);
+        }
+
+        public static Raman getCurrentRamen(int id)
+        {
+            return RamenRepository.checkRamenById(id);
+        }
     }
 }

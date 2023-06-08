@@ -35,6 +35,7 @@ namespace PSD_LAB_PROJECT.View
 
             if (userRole.Equals("Customer"))
             {
+                home_btn.Attributes["style"] = "visibility: visible";
                 order_rmn_btn.Attributes["style"] = "visibility: visible";
                 history_btn.Attributes["style"] = "visibility: visible";
                 profile_btn.Attributes["style"] = "visibility: visible";
@@ -50,12 +51,14 @@ namespace PSD_LAB_PROJECT.View
             }
             if (userRole.Equals("Admin"))
             {
+                home_btn.Attributes["style"] = "visibility: visible";
                 manage_rmn_btn.Attributes["style"] = "visibility: visible";
                 order_queue_btn.Attributes["style"] = "visibility: visible";
                 profile_btn.Attributes["style"] = "visibility: visible";
                 history_btn.Attributes["style"] = "visibility: visible";
                 report_btn.Attributes["style"] = "visibility: visible";
                 logout_btn.Attributes["style"] = "visibility: visible";
+                order_rmn_btn.Attributes["style"] = "visibility: visible";
             }
         
     }
@@ -73,8 +76,12 @@ namespace PSD_LAB_PROJECT.View
 
         protected void home_btn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/wm_home.aspx");
+            Response.Redirect("~/View/home.aspx");
         }
 
+        protected void profile_btn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/Profile.aspx");
+        }
     }
 }

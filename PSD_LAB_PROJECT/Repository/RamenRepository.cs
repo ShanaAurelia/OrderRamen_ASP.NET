@@ -40,5 +40,38 @@ namespace PSD_LAB_PROJECT.Repository
             return ramenData;
                                            
         }
+
+        public static void ramenDeleteRepo(int id)
+        {
+            DatabaseEntities db = new DatabaseEntities();
+            Raman deletedRamen = db.Ramen.Find(id);
+            db.Ramen.Remove(deletedRamen);
+            db.SaveChanges();
+        }
+
+        public static void ramenEditingRepo(int id, string name, string meat, string broth, string price)
+        {
+            DatabaseEntities db = new DatabaseEntities();
+            Raman editNewRamen = db.Ramen.Find(id);
+            editNewRamen.Meat.name = meat;
+            editNewRamen.Name = name;
+            editNewRamen.Price = price;
+            editNewRamen.Broth = broth;
+            db.SaveChanges();
+        }
+
+        public static Raman checkRamen(string name)
+        {
+            DatabaseEntities db = new DatabaseEntities();
+            Raman checkRamen = db.Ramen.Where((x) => x.Name.Equals(name)).FirstOrDefault();
+            return checkRamen;
+        }
+
+        public static Raman checkRamenById(int id)
+        {
+            DatabaseEntities db = new DatabaseEntities();
+            Raman ramen = db.Ramen.Find(id);
+            return ramen;
+        }
     }
 }

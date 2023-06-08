@@ -20,6 +20,7 @@ namespace PSD_LAB_PROJECT.View
                 username_txb.Text = check_cookie["username"];
                 password_txb.Text = check_cookie["password"];
             }
+            
 
         }
 

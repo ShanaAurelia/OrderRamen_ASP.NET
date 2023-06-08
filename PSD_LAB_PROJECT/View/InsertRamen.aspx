@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
-        <asp:Label ID="welcome_txt" runat="server" Text="Please create your ramen!"></asp:Label>
+        <asp:Label ID="welcome_txt" runat="server" Text="Please create your ramen!"></asp:Label><br />
             
             <asp:Label ID="rmn_name_lbl" runat="server" Text="Ramen Name   "></asp:Label>
             <asp:TextBox ID="rmn_name_txb" runat="server"></asp:TextBox><br />
@@ -25,7 +25,7 @@
             <asp:TextBox ID="rmn_price_txb" runat="server"></asp:TextBox><br /><br />
 
             <asp:Button ID="create_rmn_btn" runat="server" Text="Create Ramen" OnClick="create_rmn_btn_Click" />
-            <asp:Button ID="go_back_btn" runat="server" Text="Go Back" /><br />
-            <asp:Label ID="status_lbl" runat="server" Text=""></asp:Label>
+            <asp:Button ID="go_back_btn" runat="server" Text="Go Back" OnClick="go_back_btn_Click" /><br />
+            <asp:Label ID="status_lbl" runat="server" Text="" style="color:red"></asp:Label>
     </div>
 </asp:Content>

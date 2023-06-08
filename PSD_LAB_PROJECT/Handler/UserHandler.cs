@@ -28,5 +28,12 @@ namespace PSD_LAB_PROJECT.Handler
         {
             return UserRepository.dataForAdmin();
         }
+
+        public static User updateUserRegistry(string oldUsername, string username, string password, string email, string gender)
+        {
+            int id = UserRepository.getUserID(oldUsername);
+            return UserRepository.updateUser(username, password, gender, email, id);
+        }
+
     }
 }

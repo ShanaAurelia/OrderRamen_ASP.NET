@@ -27,5 +27,10 @@ namespace PSD_LAB_PROJECT.View
                 Response.Redirect("~/View/ManageRamen.aspx");
             }
         }
+
+        protected void go_back_btn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/ManageRamen.aspx");
+        }
     }
 }

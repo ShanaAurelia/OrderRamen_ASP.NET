@@ -23,10 +23,14 @@ namespace PSD_LAB_PROJECT.View
                     role = UserController.validateUserRole(check_cookie["username"].ToString());
                     username = check_cookie["username"];
                 }
-                else
+                else if(Session["username_session"] != null)
                 {
                     role = UserController.validateUserRole(Session["username_session"].ToString());
                     username = Session["username_session"].ToString();
+                }
+                else
+                {
+                    Response.Redirect("~/View/Login.aspx");
                 }
 
                 if (role.Equals("Staff"))
